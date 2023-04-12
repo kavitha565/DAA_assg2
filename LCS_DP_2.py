@@ -51,10 +51,9 @@ def LCS_ascending_length(x, y):
 
 def getData(fileName):
     with open(fileName, "r") as f:
-        x = f.readline().strip()
-        y = f.readline().strip()
-        return x,y
+        for data in f:
+            x,y = data.split(',')
+            print(x,y)
+            LCS_ascending_length(x, y)
 
-x,y = getData('LCS1.txt')
-print(x,y)
-LCS_ascending_length(x, y)
+getData('LCS1.txt')
