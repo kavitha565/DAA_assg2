@@ -46,7 +46,7 @@ def LCS_ascending_length(x, y):
                         ascendingLcsString += lcsString[ele]
                     else:
                         continue
-            print("Length of the Longest Common Subsequence is: ", lcsLength)
+            print("Length of the Longest Common Subsequence is: ", len(ascendingLcsString))
             print("The Longest Common Subsequence of "+x+" and "+y+" is "+ascendingLcsString)
 
 def getData(fileName):
