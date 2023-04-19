@@ -1,4 +1,5 @@
 import numpy as np
+from timeit import default_timer as timer
 
 # Function to calculate the length of longest common subsequence of strings - x,y 
 def LCS_length(x, y):
@@ -78,6 +79,7 @@ def getData(fileName):
             x,y = data.strip().split(',')
             print('X = "'+x+'" Y = "'+y+'"')
 
+            beforeTime = timer()
             # Calculate the longest common subsequence of the strings
             b,c,lcsLength = LCS_length(x, y)
 
@@ -89,6 +91,9 @@ def getData(fileName):
             # Display LCS string and length of LCS
             print("Length of the Longest Common Subsequence is: ", len(ascendingLcsString))
             print('The Longest Common Subsequence of "'+x+'" and "'+y+'" is '+ascendingLcsString)
+
+            timeTaken = timer() - beforeTime
+            print(f"Time taken to find the Longest Common Subsequence is {timeTaken:6f} seconds")
 
             
 # Get string values from the file
